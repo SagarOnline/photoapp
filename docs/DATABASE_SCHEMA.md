@@ -1,6 +1,6 @@
 # Database Schema
 
-## collections
+## hives
 
 | Column | Type |
 |--------|------|
@@ -15,7 +15,7 @@
 | Column | Type |
 |--------|------|
 | id | UUID |
-| collection_id | UUID |
+| hive_id | UUID |
 | user_id | UUID NULL |
 | guest_name | TEXT |
 | joined_at | TIMESTAMP |
@@ -25,7 +25,7 @@
 | Column | Type |
 |--------|------|
 | id | UUID |
-| collection_id | UUID |
+| hive_id | UUID |
 | uploaded_by | UUID NULL |
 | file_url | TEXT |
 | thumbnail_url | TEXT |

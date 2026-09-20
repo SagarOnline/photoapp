@@ -9,12 +9,12 @@
 
 ## Phase 2
 
-Collections.
+HIves.
 
 Features:
 
-- Create collection.
-- Join collection.
+- Create HIve.
+- Join HIve.
 - QR invite.
 - Invite link.
 

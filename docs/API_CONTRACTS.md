@@ -1,8 +1,8 @@
 # API Contracts
 
-## Create Collection
+## Create HIve
 
-POST /collections
+POST /hives
 
 Request
 
@@ -19,9 +19,9 @@ Response
 
 ---
 
-## Join Collection
+## Join HIve
 
-POST /collections/join
+POST /hives/join
 
 {
   "inviteCode": "ABCD1234"
@@ -39,8 +39,8 @@ Returns media metadata.
 
 ---
 
-## List Media
+## List HIve Media
 
-GET /collections/{collectionId}/media
+GET /hives/{hiveId}/media
 
 Returns ordered media list.

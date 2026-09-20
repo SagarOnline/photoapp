@@ -5,26 +5,59 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:photoapp/features/hives/models/hive.dart';
+import 'package:photoapp/features/hives/providers/hives_provider.dart';
+import 'package:photoapp/features/hives/repository/hives_repository.dart';
 import 'package:photoapp/main.dart';
 
+class FakeHiveRepository implements HiveRepository {
+  @override
+  Future<Hive> createHive({String name = 'New HIve'}) async {
+    return Hive(
+      id: 'hive-1',
+      name: name,
+      inviteCode: 'ABCD1234',
+      coverImage: null,
+      createdAt: DateTime.now(),
+    );
+  }
+
+  @override
+  Future<List<Hive>> getHives() async {
+    return [
+      Hive(
+        id: 'hive-1',
+        name: 'Goa Trip 2026',
+        inviteCode: 'GOA2026',
+        coverImage: null,
+        createdAt: DateTime.now().subtract(const Duration(days: 8)),
+      ),
+    ];
+  }
+
+  @override
+  Future<void> joinHive(String inviteCode) async {
+    // no-op for test coverage.
+  }
+}
+
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('HIves screen loads with the app shell', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          hivesRepositoryProvider.overrideWithValue(FakeHiveRepository()),
+        ],
+        child: const MyApp(),
+      ),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpAndSettle();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Welcome back!'), findsOneWidget);
+    expect(find.text('Goa Trip 2026'), findsOneWidget);
   });
 }

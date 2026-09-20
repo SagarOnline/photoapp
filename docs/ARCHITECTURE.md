@@ -7,7 +7,7 @@ Flutter using Feature-First Clean Architecture.
 lib/
   core/
   features/
-    collection/
+    hives/
     gallery/
     upload/
     onboarding/
@@ -37,7 +37,7 @@ Future backend migration:
 
 Flutter → NestJS API → PostgreSQL → R2
 
-Flutter should never depend directly on SQL schema outside repositories.
+Flutter should never depend directly on SQL schema outside repositories. The shared event concept is called a HIve throughout the application.
 
 ## Media Upload Flow
 
