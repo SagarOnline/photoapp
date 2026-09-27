@@ -1,6 +1,6 @@
 # Documentation Guide
 
-This directory is the source of truth for product behavior, architecture, contracts, data design, and engineering standards.
+This directory is the source of truth for product behavior, architecture, contracts, data design, and engineering standards. The repository contains a Flutter client under `frontend/`, a separately deployable NestJS API under `backend/`, and root-level `db/` SQL scripts.
 
 ## Reading Order
 
@@ -19,6 +19,7 @@ This directory is the source of truth for product behavior, architecture, contra
 - Technical structure belongs in `ARCHITECTURE.md`.
 - External and persistence contracts belong in `API_CONTRACTS.md` and `DATABASE_SCHEMA.md`.
 - Rationale for accepted choices belongs in `decisions/`.
+- Repository setup and test commands belong in the root `README.md`; application-specific implementation belongs to `frontend/` (Flutter) or `backend/` (API). Keep `db/` and `docs/` at the repository root.
 
 Every requirement uses a stable identifier and a status such as Proposed, Accepted, In Progress, Implemented, Deprecated, or Rejected. Update the relevant document in the same change as the implementation.
 

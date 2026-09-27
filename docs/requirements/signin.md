@@ -84,3 +84,9 @@ The Sign-up form MUST collect the following information from a user whose verifi
 The application MUST require all three values to complete sign-up.
 
 The application MUST persist the required profile details associated with the user's authenticated account. If persistence fails, sign-up MUST remain incomplete and the user MUST NOT be allowed to access Hive features.
+
+### API Boundary
+
+Supabase Auth remains the identity provider. The Flutter client MUST send its current Supabase access token as a bearer token when calling protected feature APIs. The backend MUST validate the token and derive the user ID from the validated identity; it MUST NOT trust a client-supplied user ID.
+
+The backend MUST determine registration completeness from the persisted profile. An authenticated identity without all required profile fields MUST be routed to or remain in the sign-up flow and MUST NOT access Hive APIs. Profile completion MUST be persisted through the backend API.

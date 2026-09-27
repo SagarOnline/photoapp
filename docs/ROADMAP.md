@@ -2,8 +2,9 @@
 
 ## Phase 1
 
-- Flutter setup.
-- Supabase integration.
+- Flutter and NestJS application setup in the same repository.
+- Supabase Auth integration in Flutter; Supabase access-token validation in the API.
+- API-to-PostgreSQL integration and versioned feature API foundation.
 - Sign-up and sign-in (phone/email verification, Google and Apple sign-in).
 - Theme.
 - Routing.
@@ -18,6 +19,7 @@ Features:
 - Join Hive.
 - QR invite.
 - Invite link.
+- Hive APIs backed by PostgreSQL; Flutter uses the API only for Hive data.
 
 ## Phase 3
 
@@ -28,6 +30,7 @@ Features:
 - Grid.
 - Lazy loading.
 - Full-screen preview.
+- Authenticated, member-authorized paginated gallery API.
 
 ## Phase 4
 
@@ -39,6 +42,7 @@ Features:
 - Gallery picker.
 - Compression.
 - Progress indicator.
+- Short-lived R2 upload authorization and backend metadata persistence.
 
 ## Phase 5
 

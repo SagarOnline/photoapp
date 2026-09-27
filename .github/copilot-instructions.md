@@ -26,3 +26,11 @@ Requirement priority:
 5. Proposed requirements.
 
 Never silently override an accepted requirement or decision.
+
+Repository architecture:
+
+- The Flutter client lives in `frontend/`; the NestJS feature API lives in `backend/`.
+- Keep `db/` and `docs/` at the repository root.
+- Supabase is used for authentication only. Flutter sends Supabase access tokens to the API and MUST NOT directly access feature tables.
+- The backend is the only application component that accesses PostgreSQL or privileged Cloudflare R2 credentials.
+- Keep API contracts, schema docs, migrations, and implementation in sync.

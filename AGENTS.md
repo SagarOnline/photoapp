@@ -16,10 +16,9 @@ Build a production-quality MVP with clean architecture, strong typing, and scala
 - Dart 3
 - Riverpod for state management
 - GoRouter for navigation
-- Supabase
-  - PostgreSQL
-  - Authentication
-  - Edge Functions (later phases)
+- NestJS feature API (in `backend/`)
+- Supabase Authentication (identity provider only)
+- PostgreSQL accessed only by the NestJS API
 - Cloudflare R2 for media storage.
 - GitHub Actions for CI/CD.
 
@@ -29,7 +28,7 @@ Build a production-quality MVP with clean architecture, strong typing, and scala
 2. Sharing a Hive should be easier than sharing photos in WhatsApp.
 3. Every feature should be optimized for mobile devices and slow networks.
 4. Media uploads should be compressed before upload.
-5. Design APIs to remain compatible with a future NestJS backend.
+5. Flutter feature data must be accessed through the NestJS API.
 
 ## Engineering Principles
 
@@ -78,11 +77,14 @@ Use the docs files in the order below whenever you need product, technical, or i
 
 ## Directory Ownership
 
-- lib/features → UI and feature logic (`hives`, `gallery`, `upload`).
-- lib/models → Data models only.
-- lib/services → Backend clients and repositories.
-- lib/core → Shared utilities, constants, theme, router.
-- db → SQL schema and seed scripts.
+- frontend/lib/features → Flutter UI and feature logic (`hives`, `gallery`, `upload`).
+- frontend/lib/models → Flutter data models only.
+- frontend/lib/services → Flutter API clients and repositories; no direct database access.
+- frontend/lib/core → Shared Flutter utilities, constants, theme, router.
+- frontend → Flutter application and platform projects (`android`, `ios`, `web`, desktop targets).
+- backend → NestJS controllers, services, repositories, validation, and API tests.
+- db → Root-level development SQL schema and seed scripts aligned with backend entities.
+- docs → Root-level product requirements, contracts, architecture, and decisions.
 
 ## Out of Scope for MVP
 
@@ -96,4 +98,4 @@ Do not implement unless requested:
 - Push notifications.
 - Original-quality storage.
 
-This file becomes the primary context for any AI coding assistant. Before changing code, identify the relevant requirement, architecture, contract, schema, and decision documents. Update documentation in the same change when behavior or a public contract changes.
+This file becomes the primary context for any AI coding assistant. Before changing code, identify the relevant requirement, architecture, contract, schema, and decision documents. Update documentation in the same change when behavior or a public contract changes. The API is the only application component that accesses PostgreSQL or privileged R2 credentials. Keep Flutter under `frontend/`, NestJS under `backend/`, and `db/` and `docs/` at the repository root.
