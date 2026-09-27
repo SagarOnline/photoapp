@@ -5,51 +5,27 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:photoapp/features/hives/models/hive.dart';
-import 'package:photoapp/features/hives/providers/hives_provider.dart';
-import 'package:photoapp/features/hives/repository/hives_repository.dart';
+import 'package:photoapp/features/auth/providers/auth_status_provider.dart';
 import 'package:photoapp/main.dart';
 
-class FakeHiveRepository implements HiveRepository {
+class FakeAuthStatus extends AuthStatus {
   @override
-  Future<Hive> createHive({String name = 'New Hive'}) async {
-    return Hive(
-      id: 'hive-1',
-      name: name,
-      inviteCode: 'ABCD1234',
-      coverImage: null,
-      createdAt: DateTime.now(),
-    );
-  }
-
-  @override
-  Future<List<Hive>> getHives() async {
-    return [
-      Hive(
-        id: 'hive-1',
-        name: 'Goa Trip 2026',
-        inviteCode: 'GOA2026',
-        coverImage: null,
-        createdAt: DateTime.now().subtract(const Duration(days: 8)),
-      ),
-    ];
-  }
-
-  @override
-  Future<void> joinHive(String inviteCode) async {
-    // no-op for test coverage.
-  }
+  bool get isAuthenticated => false;
 }
 
 void main() {
-  testWidgets('Hives screen loads with the app shell', (WidgetTester tester) async {
+  testWidgets('unauthenticated users see all sign-in options',
+      (WidgetTester tester) async {
+    final authStatus = FakeAuthStatus();
+
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
-          hivesRepositoryProvider.overrideWithValue(FakeHiveRepository()),
+          authStatusProvider.overrideWithValue(authStatus),
         ],
         child: const MyApp(),
       ),
@@ -57,7 +33,12 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    expect(find.text('Welcome back!'), findsOneWidget);
-    expect(find.text('Goa Trip 2026'), findsOneWidget);
+    expect(find.text('Continue with Phone Number'), findsOneWidget);
+    expect(find.text('Continue with Email'), findsOneWidget);
+    expect(find.text('Continue with Google'), findsOneWidget);
+    expect(find.text('Continue with Apple'), findsOneWidget);
+
+    await tester.pumpWidget(const SizedBox.shrink());
+    authStatus.dispose();
   });
 }
