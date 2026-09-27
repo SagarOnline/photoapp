@@ -1,6 +1,6 @@
 # API Contracts
 
-## Create HIve
+## Create Hive
 
 POST /hives
 
@@ -19,7 +19,7 @@ Response
 
 ---
 
-## Join HIve
+## Join Hive
 
 POST /hives/join
 
@@ -39,7 +39,7 @@ Returns media metadata.
 
 ---
 
-## List HIve Media
+## List Hive Media
 
 GET /hives/{hiveId}/media
 

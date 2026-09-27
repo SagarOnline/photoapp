@@ -24,10 +24,10 @@ class SupabaseService {
         .toList(growable: false);
   }
 
-  Future<Map<String, dynamic>> createHive({String name = 'New HIve'}) async {
+  Future<Map<String, dynamic>> createHive({String name = 'New Hive'}) async {
     final trimmedName = name.trim();
     if (trimmedName.isEmpty) {
-      throw const FormatException('HIve name cannot be empty.');
+      throw const FormatException('Hive name cannot be empty.');
     }
 
     final inviteCode = await _inviteCodeGenerator.generate();
@@ -64,7 +64,7 @@ class SupabaseService {
 
     final hiveId = response['id'];
     if (hiveId is! String || hiveId.isEmpty) {
-      throw const FormatException('HIve record is invalid.');
+      throw const FormatException('Hive record is invalid.');
     }
 
     await _client.from('members').insert({

@@ -29,7 +29,8 @@ Supabase initially.
 Responsibilities:
 
 - PostgreSQL stores metadata.
-- Auth manages anonymous and authenticated users.
+- Auth manages registered user accounts; anonymous authentication is not used.
+- Users must complete sign-up or sign in before joining a Hive.
 - Storage metadata stored in PostgreSQL.
 - Actual media stored in Cloudflare R2.
 
@@ -37,7 +38,7 @@ Future backend migration:
 
 Flutter → NestJS API → PostgreSQL → R2
 
-Flutter should never depend directly on SQL schema outside repositories. The shared event concept is called a HIve throughout the application.
+Flutter should never depend directly on SQL schema outside repositories. The shared event concept is called a Hive throughout the application.
 
 ## Media Upload Flow
 

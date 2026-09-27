@@ -4,17 +4,18 @@
 
 - Flutter setup.
 - Supabase integration.
+- Sign-up and sign-in (phone/email verification, Google and Apple sign-in).
 - Theme.
 - Routing.
 
 ## Phase 2
 
-HIves.
+Hives.
 
 Features:
 
-- Create HIve.
-- Join HIve.
+- Create Hive.
+- Join Hive.
 - QR invite.
 - Invite link.
 

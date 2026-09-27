@@ -24,4 +24,4 @@ Every requirement uses a stable identifier and a status such as Proposed, Accept
 
 ## Canonical Terminology
 
-The product concept is always a HIve, with HIves as the plural. Code and database identifiers use `hive` and `hives`. The media browsing feature is always called gallery.
+The product concept is always a Hive, with Hives as the plural. Code and database identifiers use `hive` and `hives`. The media browsing feature is always called gallery.

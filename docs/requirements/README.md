@@ -2,7 +2,8 @@
 
 | Area | Document | IDs |
 |---|---|---|
-| HIves | [hives.md](hives.md) | HIVE-* |
+| Sign-in | [signin.md](signin.md) | SIGNIN-* |
+| Hives | [hives.md](hives.md) | HIVE-* |
 | Joining | [joining.md](joining.md) | JOIN-* |
 | Media uploads | [media_upload.md](media_upload.md) | MED-* |
 | Gallery | [gallery.md](gallery.md) | GAL-* |

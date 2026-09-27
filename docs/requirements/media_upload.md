@@ -6,7 +6,7 @@ Status: Accepted
 Priority: Must  
 Phase: MVP
 
-A HIve member must be able to upload photos and videos to the HIve gallery.
+A Hive member must be able to upload photos and videos to the Hive gallery.
 
 ### Acceptance Criteria
 

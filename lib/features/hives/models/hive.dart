@@ -24,7 +24,7 @@ class Hive {
     final createdAt = json['created_at'] ?? json['createdAt'];
 
     if (id is! String || name is! String || inviteCode is! String) {
-      throw const FormatException('HIve payload is missing required fields.');
+      throw const FormatException('Hive payload is missing required fields.');
     }
 
     return Hive(

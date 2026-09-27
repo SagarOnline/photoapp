@@ -34,7 +34,7 @@ class HivesController extends AsyncNotifier<List<Hive>> {
   Future<void> createHive(String name) async {
     final repository = ref.read(hivesRepositoryProvider);
     if (name.trim().isEmpty) {
-      throw const FormatException('HIve name cannot be empty.');
+      throw const FormatException('Hive name cannot be empty.');
     }
 
     final createdHive = await repository.createHive(name: name);

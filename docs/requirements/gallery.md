@@ -1,12 +1,12 @@
 # Gallery Requirements
 
-## GAL-001: Browse HIve Media
+## GAL-001: Browse Hive Media
 
 Status: Accepted  
 Priority: Must  
 Phase: MVP
 
-Members must be able to browse media uploaded to their HIve in a gallery.
+Members must be able to browse media uploaded to their Hive in a gallery.
 
 ### Acceptance Criteria
 

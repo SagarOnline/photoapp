@@ -15,7 +15,7 @@ import 'package:photoapp/main.dart';
 
 class FakeHiveRepository implements HiveRepository {
   @override
-  Future<Hive> createHive({String name = 'New HIve'}) async {
+  Future<Hive> createHive({String name = 'New Hive'}) async {
     return Hive(
       id: 'hive-1',
       name: name,
@@ -45,7 +45,7 @@ class FakeHiveRepository implements HiveRepository {
 }
 
 void main() {
-  testWidgets('HIves screen loads with the app shell', (WidgetTester tester) async {
+  testWidgets('Hives screen loads with the app shell', (WidgetTester tester) async {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [

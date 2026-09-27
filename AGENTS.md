@@ -25,8 +25,8 @@ Build a production-quality MVP with clean architecture, strong typing, and scala
 
 ## Core Product Principles
 
-1. Guest users should be able to join HIves with minimal friction.
-2. Sharing a HIve should be easier than sharing photos in WhatsApp.
+1. Users must sign up or sign in to a registered account before joining Hives.
+2. Sharing a Hive should be easier than sharing photos in WhatsApp.
 3. Every feature should be optimized for mobile devices and slow networks.
 4. Media uploads should be compressed before upload.
 5. Design APIs to remain compatible with a future NestJS backend.
@@ -43,10 +43,10 @@ Build a production-quality MVP with clean architecture, strong typing, and scala
 
 ## Product Terminology
 
-- The shared event concept is always called a HIve; use HIves for the plural.
+- The shared event concept is always called a Hive; use Hives for the plural.
 - Do not introduce new uses of collection or collections for this concept.
 - Use gallery, never gallary.
-- Apply HIve terminology consistently in Dart symbols, routes, APIs, database names, documentation, and user-facing text.
+- Apply Hive terminology consistently in Dart symbols, routes, APIs, database names, documentation, and user-facing text.
 
 ## AI Coding Rules
 
@@ -70,7 +70,7 @@ Use the docs files in the order below whenever you need product, technical, or i
 - [docs/PRODUCT.md](docs/PRODUCT.md) — Product vision, target users, MVP goals, success criteria, and non-goals.
 - [docs/ROADMAP.md](docs/ROADMAP.md) — Delivery phases and planned feature milestones for the MVP and future roadmap.
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — System architecture, responsibilities, data flow, and the intended frontend/backend boundaries.
-- [docs/API_CONTRACTS.md](docs/API_CONTRACTS.md) — Expected endpoints, payloads, and responses for HIve, join, upload, and media APIs.
+- [docs/API_CONTRACTS.md](docs/API_CONTRACTS.md) — Expected endpoints, payloads, and responses for Hive, join, upload, and media APIs.
 - [docs/DATABASE_SCHEMA.md](docs/DATABASE_SCHEMA.md) — Core database tables, key fields, and persistence requirements.
 - [docs/CODING_STANDARDS.md](docs/CODING_STANDARDS.md) — Dart, widget, naming, testing, and error-handling standards to follow during implementation.
 - [docs/requirements/](docs/requirements/) — Stable, domain-specific functional and non-functional requirements.

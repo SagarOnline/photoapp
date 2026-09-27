@@ -39,7 +39,7 @@ class _JoinHiveSheetState extends ConsumerState<JoinHiveSheet> {
 
       Navigator.of(context).pop();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Joined HIve $code.')),
+        SnackBar(content: Text('Joined Hive $code.')),
       );
     } on FormatException catch (error) {
       if (!mounted) {
@@ -83,7 +83,7 @@ class _JoinHiveSheetState extends ConsumerState<JoinHiveSheet> {
             Row(
               children: [
                 Text(
-                  'Join HIve',
+                  'Join Hive',
                   style: theme.textTheme.titleLarge,
                 ),
                 const Spacer(),
@@ -117,7 +117,7 @@ class _JoinHiveSheetState extends ConsumerState<JoinHiveSheet> {
                         child: CircularProgressIndicator(strokeWidth: 2),
                       )
                     : const Icon(Icons.group_add_outlined),
-                label: Text(_isSubmitting ? 'Joining...' : 'Join HIve'),
+                label: Text(_isSubmitting ? 'Joining...' : 'Join Hive'),
               ),
             ),
           ],

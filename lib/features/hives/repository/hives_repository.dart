@@ -13,7 +13,7 @@ class SupabaseHiveRepository implements HiveRepository {
   final SupabaseService _supabaseService;
 
   @override
-  Future<Hive> createHive({String name = 'New HIve'}) async {
+  Future<Hive> createHive({String name = 'New Hive'}) async {
     final payload = await _supabaseService.createHive(name: name);
     return Hive.fromJson(payload);
   }

@@ -24,7 +24,7 @@ class _CreateHiveSheetState extends ConsumerState<CreateHiveSheet> {
     final name = _nameController.text.trim();
     if (name.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter a HIve name.')),
+        const SnackBar(content: Text('Please enter a Hive name.')),
       );
       return;
     }
@@ -39,7 +39,7 @@ class _CreateHiveSheetState extends ConsumerState<CreateHiveSheet> {
 
       Navigator.of(context).pop();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('HIve "$name" created.')),
+        SnackBar(content: Text('Hive "$name" created.')),
       );
     } on FormatException catch (error) {
       if (!mounted) {
@@ -55,7 +55,7 @@ class _CreateHiveSheetState extends ConsumerState<CreateHiveSheet> {
       }
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Unable to create this HIve right now.')),
+        const SnackBar(content: Text('Unable to create this Hive right now.')),
       );
     } finally {
       if (mounted) {
@@ -83,7 +83,7 @@ class _CreateHiveSheetState extends ConsumerState<CreateHiveSheet> {
             Row(
               children: [
                 Text(
-                  'Create HIve',
+                  'Create Hive',
                   style: theme.textTheme.titleLarge,
                 ),
                 const Spacer(),
@@ -101,7 +101,7 @@ class _CreateHiveSheetState extends ConsumerState<CreateHiveSheet> {
               onSubmitted: (_) => _submit(),
               decoration: const InputDecoration(
                 hintText: 'E.g. Goa Trip 2026',
-                labelText: 'HIve name',
+                labelText: 'Hive name',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -117,7 +117,7 @@ class _CreateHiveSheetState extends ConsumerState<CreateHiveSheet> {
                         child: CircularProgressIndicator(strokeWidth: 2),
                       )
                     : const Icon(Icons.add),
-                label: Text(_isSubmitting ? 'Creating...' : 'Create HIve'),
+                label: Text(_isSubmitting ? 'Creating...' : 'Create Hive'),
               ),
             ),
           ],

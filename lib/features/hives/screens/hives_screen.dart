@@ -89,7 +89,7 @@ class _HivesDashboard extends StatelessWidget {
             ),
             IconButton(
               onPressed: onCreate,
-              tooltip: 'Add new HIve',
+              tooltip: 'Add new Hive',
               icon: const Icon(Icons.add_circle_rounded, size: 32),
             ),
           ],
@@ -160,12 +160,12 @@ class _EmptyHivesState extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'No HIves yet',
+              'No Hives yet',
               style: theme.textTheme.headlineSmall,
             ),
             const SizedBox(height: 12),
             Text(
-              'Create a new event HIve or join one from a shared invite code.',
+              'Create a new event Hive or join one from a shared invite code.',
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyLarge?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
@@ -177,7 +177,7 @@ class _EmptyHivesState extends StatelessWidget {
               child: FilledButton.icon(
                 onPressed: onCreate,
                 icon: const Icon(Icons.add),
-                label: const Text('Create a HIve'),
+                label: const Text('Create a Hive'),
               ),
             ),
             const SizedBox(height: 12),
@@ -222,7 +222,7 @@ class _ErrorState extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'Could not load HIves',
+              'Could not load Hives',
               style: theme.textTheme.titleMedium,
             ),
             const SizedBox(height: 12),

@@ -12,7 +12,7 @@ Before making product, architecture, API, database, or UI decisions:
 
 Project terminology is authoritative:
 
-- The shared event concept is always a `HIve`; the plural is `HIves`.
+- The shared event concept is always a `Hive`; the plural is `Hives`.
 - Do not introduce `collection` or `collections` as names for this concept.
 - Use `gallery`, never `gallary`.
 - Use `hive` and `hives` in code, routes, APIs, and database names.
