@@ -6,6 +6,8 @@ Status: Accepted
 Priority: Must  
 Phase: MVP
 
+All authentication flows for phone, email, Google, and Apple MUST use Supabase Auth as the identity provider. The application MUST NOT implement custom authentication logic or separate auth backends for these flows.
+
 When a user is not signed in, the application MUST display the Sign-in screen with these options:
 
 - Continue with Phone Number
