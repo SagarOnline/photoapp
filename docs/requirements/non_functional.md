@@ -8,7 +8,10 @@ Phase: MVP
 
 - The application must be optimized for mobile devices and slow networks.
 - UI code must not depend directly on SQL or storage provider details.
-- Repository boundaries must preserve compatibility with a future NestJS backend.
+- Flutter repository boundaries MUST call the NestJS feature API for application data.
+- The Flutter client MUST access Hive, profile, membership, and media metadata through the NestJS API; it MUST NOT query PostgreSQL or make direct Supabase database calls for feature data.
+- PostgreSQL credentials and privileged Cloudflare R2 credentials MUST remain server-side and MUST NOT be included in client builds or responses.
+- The backend MUST validate identity tokens and enforce profile and Hive membership authorization before feature operations.
 
 ## NFR-002: Cross-platform Availability
 
