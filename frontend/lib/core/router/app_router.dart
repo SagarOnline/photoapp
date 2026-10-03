@@ -14,7 +14,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     initialLocation: '/',
     refreshListenable: authStatus,
     redirect: (context, state) {
-      final isSignInRoute = state.matchedLocation == '/sign-in';
+      final isSignInRoute = state.matchedLocation == '/sign-in' ||
+          state.matchedLocation.startsWith('/sign-in/');
       if (!authStatus.isAuthenticated && !isSignInRoute) {
         return '/sign-in';
       }
@@ -47,6 +48,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/sign-in',
         name: 'sign-in',
         builder: (context, state) => const SignInScreen(),
+      ),
+      GoRoute(
+        path: '/sign-in/email',
+        name: 'sign-in-email',
+        builder: (context, state) => const EmailSignInScreen(),
       ),
       GoRoute(
         path: '/sign-up',
